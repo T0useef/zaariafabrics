@@ -11,7 +11,8 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#161412">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>A</text></svg>">
+  <link rel="icon" href="assets/zaaria-icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/zaaria-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -19,7 +20,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"AYRA","url":"https://ayra.pk","logo":"https://ayra.pk/logo.png","sameAs":["https://instagram.com/ayra.atelier"],"address":{"@type":"PostalAddress","streetAddress":"Plot 14, Block 5, Clifton","addressLocality":"Karachi","addressCountry":"PK"}}
+  {"@context":"https://schema.org","@type":"Organization","name":"AYRA","url":"https://ayra.pk","logo":"https://ayra.pk/assets/zaaria-logo.png","sameAs":["https://instagram.com/ayra.atelier"],"address":{"@type":"PostalAddress","streetAddress":"Plot 14, Block 5, Clifton","addressLocality":"Karachi","addressCountry":"PK"}}
   </script>
 </head>
 <body>
@@ -161,7 +162,7 @@
         </nav>
       </div>
 
-      <a class="logo" href="index.html">Ayra<span>Atelier · Karachi</span></a>
+      <a class="logo" href="index.html"><img src="assets/zaaria-logo.png" alt="Zaaria Fabrics"></a>
 
       <div class="header-actions">
         <button class="icon-btn" type="button" data-open-search aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -267,19 +268,72 @@
   </aside>
 
   <main id="main">
-    <section class="hero">
-      <picture>
-        <source media="(max-width: 767px)" srcset="https://images.unsplash.com/photo-1515886657613-9f3515e0c668?auto=format&fit=crop&w=900&q=80">
-        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80" alt="AYRA New Season 2026 editorial">
-      </picture>
-      <div class="hero-copy">
-        <span class="eyebrow">New Season</span>
-        <h1>2026<br>Collection</h1>
-        <p>Discover the new season — lawn, linen, and evening cloth cut for the Pakistani wardrobe.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-light" href="women.html">Shop Women</a>
-          <a class="btn btn-ghost" href="men.html" style="border-color:#fff;color:#fff">Shop Men</a>
+    <section class="hero" data-hero-slider>
+      <div class="hero-slide is-active" data-hero>
+        <picture>
+          <source media="(max-width: 767px)" srcset="https://images.unsplash.com/photo-1515886657613-9f3515e0c668?auto=format&fit=crop&w=900&q=80">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80" alt="New Season 2026 editorial">
+        </picture>
+        <div class="hero-copy">
+          <span class="eyebrow">New Season</span>
+          <h1>2026<br>Collection</h1>
+          <p>Discover the new season — lawn, linen, and evening cloth cut for the Pakistani wardrobe.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-light" href="women.html">Shop Women</a>
+            <a class="btn btn-ghost" href="men.html" style="border-color:#fff;color:#fff">Shop Men</a>
+          </div>
         </div>
+      </div>
+      <div class="hero-slide" data-hero>
+        <picture>
+          <source media="(max-width: 767px)" srcset="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=80">
+          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1920&q=80" alt="The Women's Edit">
+        </picture>
+        <div class="hero-copy">
+          <span class="eyebrow">Women</span>
+          <h1>The Women's<br>Edit</h1>
+          <p>Ready-to-wear, unstitched, and modest silhouettes with a quiet Karachi line.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-light" href="women.html">Shop Women</a>
+            <a class="btn btn-ghost" href="women-unstitched.html" style="border-color:#fff;color:#fff">Shop Unstitched</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" data-hero>
+        <picture>
+          <source media="(max-width: 767px)" srcset="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=900&q=80">
+          <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=1920&q=80" alt="The Men's Edit">
+        </picture>
+        <div class="hero-copy">
+          <span class="eyebrow">Men</span>
+          <h1>The Men's<br>Edit</h1>
+          <p>Shalwar kameez, linen kurtas, and evening tailoring with a Karachi ease.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-light" href="men.html">Shop Men</a>
+            <a class="btn btn-ghost" href="men-formal.html" style="border-color:#fff;color:#fff">Shop Formal</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-slide" data-hero>
+        <picture>
+          <source media="(max-width: 767px)" srcset="https://images.unsplash.com/photo-1583391733956-6c78276477e2?auto=format&fit=crop&w=900&q=80">
+          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1920&q=80" alt="Festive collection">
+        </picture>
+        <div class="hero-copy">
+          <span class="eyebrow">Occasion</span>
+          <h1>Festive<br>’26</h1>
+          <p>Embroidered silks, prince coats, and evening cloth for the moments that matter.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-light" href="collections.html">Shop Collections</a>
+            <a class="btn btn-ghost" href="collection-festive.html" style="border-color:#fff;color:#fff">Festive Edit</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-dots" role="tablist" aria-label="Banner slides">
+        <button type="button" data-hero-dot="0" class="is-active" aria-label="Show slide 1"></button>
+        <button type="button" data-hero-dot="1" aria-label="Show slide 2"></button>
+        <button type="button" data-hero-dot="2" aria-label="Show slide 3"></button>
+        <button type="button" data-hero-dot="3" aria-label="Show slide 4"></button>
       </div>
     </section>
 
@@ -554,6 +608,100 @@
       </a>
     </section>
 
+    <section class="voices" data-voices>
+      <div class="container-ayra">
+        <div class="section-head voices-head">
+          <div>
+            <span class="eyebrow">Kind words</span>
+            <h2>Customer reviews</h2>
+          </div>
+        </div>
+      </div>
+      <div class="voices-wrap">
+        <button class="voices-btn" type="button" data-voices-prev aria-label="Previous review"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="voices-stage" data-voices-stage>
+          <article class="voice-card is-active" data-voice>
+            <div class="voice-stars" aria-label="5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <blockquote>Cloth quality is excellent — the fall of the fabric is exactly as photographed. It felt like something made for Eid mornings in Karachi.</blockquote>
+            <div class="voice-who">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="">
+              <div>
+                <strong>Ayesha K.</strong>
+                <span>Karachi · Ivory Lawn Kurta</span>
+              </div>
+            </div>
+          </article>
+          <article class="voice-card" data-voice>
+            <div class="voice-stars" aria-label="5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <blockquote>Arrived in three days to Lahore. Sizing true to the guide, and the stitch on the shalwar kameez is cleaner than most pret I’ve bought.</blockquote>
+            <div class="voice-who">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80" alt="">
+              <div>
+                <strong>Hamza R.</strong>
+                <span>Lahore · Graphite Shalwar Kameez</span>
+              </div>
+            </div>
+          </article>
+          <article class="voice-card" data-voice>
+            <div class="voice-stars" aria-label="5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <blockquote>The embroidered three-piece looked even richer in person. I wore it to a wedding and kept getting asked where it was from.</blockquote>
+            <div class="voice-who">
+              <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=120&q=80" alt="">
+              <div>
+                <strong>Sara M.</strong>
+                <span>Islamabad · Embroidered 3 Piece</span>
+              </div>
+            </div>
+          </article>
+          <article class="voice-card" data-voice>
+            <div class="voice-stars" aria-label="5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <blockquote>Tailoring on the navy blazer is quiet and exact. It sits well through a long office day without feeling stiff.</blockquote>
+            <div class="voice-who">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="">
+              <div>
+                <strong>Bilal A.</strong>
+                <span>Karachi · Navy Structured Blazer</span>
+              </div>
+            </div>
+          </article>
+          <article class="voice-card" data-voice>
+            <div class="voice-stars" aria-label="5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <blockquote>Modest without looking heavy. The charcoal abaya drapes well in heat and still feels considered for evening.</blockquote>
+            <div class="voice-who">
+              <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=120&q=80" alt="">
+              <div>
+                <strong>Fatima S.</strong>
+                <span>Faisalabad · Charcoal Abaya</span>
+              </div>
+            </div>
+          </article>
+          <article class="voice-card" data-voice>
+            <div class="voice-stars" aria-label="5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+            <blockquote>Soft cotton, easy to wear on repeat. The sand co-ord is my new travel set — packed light and still looked finished.</blockquote>
+            <div class="voice-who">
+              <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=120&q=80" alt="">
+              <div>
+                <strong>Zainab N.</strong>
+                <span>Peshawar · Sand Co-Ord</span>
+              </div>
+            </div>
+          </article>
+          <article class="voice-card" data-voice>
+            <div class="voice-stars" aria-label="5 stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <blockquote>Linen that actually breathes. The kurta held its shape after washing, which is rare for this fabric in our weather.</blockquote>
+            <div class="voice-who">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="">
+              <div>
+                <strong>Omar T.</strong>
+                <span>Karachi · Ivory Linen Kurta</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <button class="voices-btn" type="button" data-voices-next aria-label="Next review"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </section>
+
     <section class="ig container-ayra">
       <div class="ig-head">
         <h2>Follow our journey</h2>
@@ -583,7 +731,7 @@
   <footer class="site-footer">
     <div class="container-ayra footer-grid">
       <div class="footer-brand">
-        <a class="logo" href="index.html">Ayra</a>
+        <a class="logo" href="index.html"><img src="assets/zaaria-logo.png" alt="Zaaria Fabrics"></a>
         <p>A Karachi atelier for considered Pakistani fashion — ready-to-wear, unstitched, and tailoring.</p>
         <div class="socials">
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>

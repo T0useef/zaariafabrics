@@ -160,13 +160,60 @@
     }, 3800);
   }
 
-  /* Hero simple rotator */
-  $("[data-hero-dot]").on("click", function () {
-    const n = $(this).data("hero-dot");
-    $("[data-hero]").removeClass("is-active").eq(n).addClass("is-active");
-    $("[data-hero-dot]").removeClass("is-active");
-    $(this).addClass("is-active");
-  });
+  /* Hero banner rotator — crossfade, no black gap */
+  const $heroSlides = $("[data-hero]");
+  const $heroDots = $("[data-hero-dot]");
+  if ($heroSlides.length) {
+    let heroIndex = Math.max(0, $heroSlides.index($heroSlides.filter(".is-active")));
+    let heroTimer = null;
+    const fadeMs = 1000;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const showHero = (n) => {
+      const next = (n + $heroSlides.length) % $heroSlides.length;
+      if (next === heroIndex) return;
+
+      const $from = $heroSlides.eq(heroIndex);
+      const $to = $heroSlides.eq(next);
+
+      $heroSlides.removeClass("is-active is-leaving");
+      if (!reduceMotion) $from.addClass("is-leaving");
+      $to.addClass("is-active");
+      $heroDots.removeClass("is-active").eq(next).addClass("is-active");
+      heroIndex = next;
+
+      window.setTimeout(() => {
+        $from.removeClass("is-leaving");
+      }, fadeMs);
+    };
+
+    const stopHero = () => {
+      clearInterval(heroTimer);
+      heroTimer = null;
+    };
+
+    const startHero = () => {
+      if (reduceMotion || $heroSlides.length < 2) return;
+      stopHero();
+      heroTimer = setInterval(() => showHero(heroIndex + 1), 5500);
+    };
+
+    $heroDots.on("click", function () {
+      showHero(Number($(this).data("hero-dot")));
+      startHero();
+    });
+
+    $("[data-hero-slider]")
+      .on("mouseenter focusin", stopHero)
+      .on("mouseleave focusout", startHero);
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stopHero();
+      else startHero();
+    });
+
+    startHero();
+  }
 
   $(document)
     .on("click", "[data-open-menu]", function () {
@@ -523,6 +570,51 @@
     e.stopImmediatePropagation();
     openDrawer("#filter-drawer");
   });
+
+  /* Homepage reviews coverflow */
+  const $voices = $("[data-voices]");
+  if ($voices.length) {
+    const $cards = $voices.find("[data-voice]");
+    let voiceIndex = Math.max(0, $cards.index($cards.filter(".is-active")));
+    const n = $cards.length;
+
+    const wrap = (i) => ((i % n) + n) % n;
+
+    const paintVoices = () => {
+      $cards.removeClass("is-active is-prev is-next is-prev-2 is-next-2");
+      $cards.eq(voiceIndex).addClass("is-active");
+      $cards.eq(wrap(voiceIndex - 1)).addClass("is-prev");
+      $cards.eq(wrap(voiceIndex + 1)).addClass("is-next");
+      $cards.eq(wrap(voiceIndex - 2)).addClass("is-prev-2");
+      $cards.eq(wrap(voiceIndex + 2)).addClass("is-next-2");
+    };
+
+    const goVoice = (i) => {
+      voiceIndex = wrap(i);
+      paintVoices();
+    };
+
+    $voices.on("click", "[data-voices-prev]", () => goVoice(voiceIndex - 1));
+    $voices.on("click", "[data-voices-next]", () => goVoice(voiceIndex + 1));
+    $voices.on("click", "[data-voice]", function () {
+      const i = $cards.index(this);
+      if (i !== voiceIndex) goVoice(i);
+    });
+
+    let sx = 0;
+    $voices.find("[data-voices-stage]").on("pointerdown", function (e) {
+      sx = e.originalEvent.clientX;
+    });
+    $voices.find("[data-voices-stage]").on("pointerup pointerleave", function (e) {
+      if (!sx) return;
+      const dx = e.originalEvent.clientX - sx;
+      sx = 0;
+      if (Math.abs(dx) < 40) return;
+      goVoice(voiceIndex + (dx < 0 ? 1 : -1));
+    });
+
+    paintVoices();
+  }
 
   const last = store.get("ayra_last_order", {});
   if (last.id) $("[data-track-id]").first().text(last.id);
