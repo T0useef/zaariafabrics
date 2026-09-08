@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | AYRA Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin.css">
+</head><body class="admin"><div class="admin-shell"><aside class="admin-side">
+  <a class="brand" href="index.html">AYRA<small>Atelier admin</small></a>
+  <div class="grp">Overview</div>
+  <a href="index.html" class="is-active">Dashboard</a>
+  <div class="grp">Catalog</div>
+  <a href="products.html" class="">Products</a>
+  <a href="product-form.html" class="">Add product</a>
+  <a href="categories.html" class="">Categories</a>
+  <a href="collections.html" class="">Collections</a>
+  <a href="banners.html" class="">Banners</a>
+  <div class="grp">Selling</div>
+  <a href="orders.html" class="">Orders</a>
+  <a href="customers.html" class="">Customers</a>
+  <a href="discounts.html" class="">Discounts</a>
+  <a href="reviews.html" class="">Reviews</a>
+  <a href="shipping.html" class="">Shipping</a>
+  <div class="grp">Content</div>
+  <a href="cms.html" class="">CMS pages</a>
+  <a href="settings.html" class="">Settings</a>
+  <div class="grp">Store</div>
+  <a href="../index.html">View storefront</a>
+  <a href="login.html">Sign out</a>
+</aside><main class="admin-main"><div class="admin-top"><h1>Dashboard</h1><a class="btn-ad" href="product-form.html">Add product</a></div>
+<div class="kpi-grid">
+  <div class="kpi"><span>Revenue</span><strong>PKR 2.4m</strong><em>+12% this week</em></div>
+  <div class="kpi"><span>Orders</span><strong>186</strong><em>14 pending</em></div>
+  <div class="kpi"><span>Customers</span><strong>1,204</strong><em>38 new</em></div>
+  <div class="kpi"><span>Products</span><strong>22</strong><em>3 low stock</em></div>
+</div>
+<div class="two-col">
+  <div class="admin-card"><h2>Recent orders</h2>
+    <table class="admin-table"><thead><tr><th>Order</th><th>Customer</th><th>Total</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td><a href="order-detail.html">AY240918</a></td><td>Ayesha Khan</td><td>PKR 6,490</td><td><span class="pill pill-warn">Processing</span></td></tr>
+      <tr><td><a href="order-detail.html">AY240102</a></td><td>Hamza Raza</td><td>PKR 8,990</td><td><span class="pill">Shipped</span></td></tr>
+      <tr><td><a href="order-detail.html">AY239901</a></td><td>Sara Malik</td><td>PKR 24,990</td><td><span class="pill pill-ok">Delivered</span></td></tr>
+    </tbody></table>
+  </div>
+  <div>
+    <div class="admin-card"><h2>Low stock</h2><p>Midnight Prince Coat — 4<br>Navy Structured Blazer — 6<br>Midnight Embroidered 3 Piece — 7</p></div>
+    <div class="admin-card"><h2>Best sellers</h2><p>Graphite Shalwar Kameez · 320<br>Lawn 3 Piece Unstitched · 240<br>Ivory Lawn Kurta · 214</p></div>
+  </div>
+</div></main></div><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../js/admin.js"></script></body></html>

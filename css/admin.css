@@ -1,0 +1,235 @@
+/* AYRA admin — quiet fashion back-office */
+:root {
+  --ad-ink: #161412;
+  --ad-paper: #f7f4ef;
+  --ad-line: #e4ddd3;
+  --ad-muted: #6e6861;
+  --ad-bronze: #8c6b4f;
+  --ad-ok: #3d5c45;
+  --ad-warn: #8a5a18;
+  --ad-sale: #7c3a2d;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+}
+
+body.admin {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--ad-paper);
+  color: var(--ad-ink);
+}
+
+.admin-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+.admin-side {
+  background: var(--ad-ink);
+  color: #d9d1c7;
+  padding: 28px 18px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.admin-side .brand {
+  font-family: var(--font-serif);
+  color: #fffdf9;
+  letter-spacing: 0.28em;
+  font-size: 22px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.admin-side .brand small {
+  display: block;
+  font-family: var(--font-sans);
+  letter-spacing: 0.2em;
+  font-size: 9px;
+  color: #9c948a;
+  margin: 6px 0 28px;
+}
+
+.admin-side a {
+  display: block;
+  color: #cfc6bb;
+  text-decoration: none;
+  padding: 9px 10px;
+  font-size: 13px;
+  border-left: 2px solid transparent;
+}
+
+.admin-side a:hover,
+.admin-side a.is-active {
+  color: #fffdf9;
+  border-left-color: #cbbba6;
+  background: rgba(255,255,255,0.04);
+}
+
+.admin-side .grp {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8a8278;
+  margin: 18px 10px 8px;
+}
+
+.admin-main { padding: 28px 32px 60px; }
+
+.admin-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  gap: 16px;
+}
+
+.admin-top h1 {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.kpi {
+  background: #fffdf9;
+  border: 1px solid var(--ad-line);
+  padding: 18px;
+}
+
+.kpi span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ad-muted);
+}
+
+.kpi strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 32px;
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.kpi em { font-style: normal; color: var(--ad-ok); font-size: 12px; }
+
+.admin-card {
+  background: #fffdf9;
+  border: 1px solid var(--ad-line);
+  padding: 18px;
+  margin-bottom: 18px;
+}
+
+.admin-card h2 {
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+
+.admin-table { width: 100%; border-collapse: collapse; }
+.admin-table th,
+.admin-table td {
+  text-align: left;
+  padding: 11px 8px;
+  border-bottom: 1px solid var(--ad-line);
+  font-size: 13px;
+}
+
+.admin-table th {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ad-muted);
+}
+
+.pill {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid var(--ad-line);
+}
+
+.pill-ok { color: var(--ad-ok); border-color: var(--ad-ok); }
+.pill-warn { color: var(--ad-warn); border-color: var(--ad-warn); }
+.pill-bad { color: var(--ad-sale); border-color: var(--ad-sale); }
+
+.btn-ad {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--ad-ink);
+  background: var(--ad-ink);
+  color: #fffdf9;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn-ad.ghost {
+  background: transparent;
+  color: var(--ad-ink);
+}
+
+.form-ad { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-ad .full { grid-column: 1 / -1; }
+.form-ad label { display: block; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 6px; }
+.form-ad input,
+.form-ad select,
+.form-ad textarea {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--ad-line);
+  background: transparent;
+  padding: 8px 10px;
+  font-family: inherit;
+}
+
+.login-wrap {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--ad-paper);
+}
+
+.login-box {
+  width: min(420px, calc(100% - 32px));
+  background: #fffdf9;
+  border: 1px solid var(--ad-line);
+  padding: 36px;
+  text-align: center;
+}
+
+.login-box h1 {
+  font-family: var(--font-serif);
+  letter-spacing: 0.28em;
+  font-weight: 500;
+}
+
+.two-col { display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 16px; }
+
+@media (max-width: 1024px) {
+  .admin-shell { grid-template-columns: 1fr; }
+  .admin-side { height: auto; position: static; }
+  .kpi-grid,
+  .form-ad,
+  .two-col { grid-template-columns: 1fr; }
+  .admin-main { padding: 18px; }
+}

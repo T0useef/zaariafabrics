@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOUR & CO. | Haute Couture & Contemporary Pret</title>
+  <meta name="description" content="Discover luxury Pakistani fashion, unstitched lawn, ready-to-wear kurtis, formal wear, and menswear at NOUR & CO.">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Pro/Free 6.4.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --nour-black: #0F0F0F;
+      --nour-charcoal: #1E1E1E;
+      --nour-sand: #EFECE6;
+      --nour-sand-light: #F7F5F0;
+      --nour-gold: #C5A059;
+      --nour-gold-hover: #A38241;
+      --nour-gray: #666666;
+      --nour-gray-light: #E5E5E5;
+      --nour-white: #FFFFFF;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Reset & General Setup */
+    * { box-sizing: border-box; }
+    body {
+      font-family: var(--font-sans);
+      color: var(--nour-black);
+      background-color: var(--nour-white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, h5, h6, .font-serif {
+      font-family: var(--font-serif);
+      letter-spacing: 0.02em;
+      font-weight: 400;
+    }
+
+    a { color: inherit; text-decoration: none; transition: var(--transition-smooth); }
+    a:hover { color: var(--nour-gold); }
+
+    /* Top Announcement Bar */
+    .announcement-bar {
+      background-color: var(--nour-black);
+      color: var(--nour-sand);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 8px 0;
+      font-weight: 500;
+    }
+
+    /* Main Header & Navbar */
+    .navbar-nour {
+      background-color: var(--nour-white);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 15px 0;
+      transition: var(--transition-smooth);
+    }
+    .navbar-nour.sticky-top {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+    .brand-logo {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--nour-black);
+      line-height: 1;
+    }
+    .brand-sub {
+      font-family: var(--font-sans);
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      display: block;
+      color: var(--nour-gold);
+      margin-top: 3px;
+    }
+
+    /* Nav Links */
+    .nav-link-nour {
+      font-size: 0.825rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 500;
+      color: var(--nour-black) !important;
+      padding: 10px 16px !important;
+      position: relative;
+    }
+    .nav-link-nour::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      left: 16px;
+      right: 16px;
+      height: 1px;
+      background-color: var(--nour-black);
+      transform: scaleX(0);
+      transition: var(--transition-smooth);
+    }
+    .nav-link-nour:hover::after, .nav-link-nour.active::after {
+      transform: scaleX(1);
+    }
+
+    /* Header Icons */
+    .header-icon-btn {
+      background: none;
+      border: none;
+      color: var(--nour-black);
+      font-size: 1.15rem;
+      padding: 6px 10px;
+      position: relative;
+      transition: var(--transition-smooth);
+    }
+    .header-icon-btn:hover { color: var(--nour-gold); }
+    .badge-count {
+      position: absolute;
+      top: 0;
+      right: 2px;
+      background-color: var(--nour-gold);
+      color: var(--nour-white);
+      font-size: 0.65rem;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    /* Mega Menu Styling */
+    .has-megamenu { position: static !important; }
+    .megamenu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: var(--nour-white);
+      border-top: 1px solid var(--nour-gray-light);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+      padding: 40px 0;
+      display: none;
+      z-index: 1000;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: var(--transition-smooth);
+    }
+    .has-megamenu:hover .megamenu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .megamenu-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      border-bottom: 1px solid var(--nour-gray-light);
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .megamenu-list { list-style: none; padding: 0; margin: 0; }
+    .megamenu-list li { margin-bottom: 8px; }
+    .megamenu-list a {
+      font-size: 0.85rem;
+      color: var(--nour-gray);
+      transition: var(--transition-smooth);
+    }
+    .megamenu-list a:hover {
+      color: var(--nour-black);
+      padding-left: 4px;
+    }
+
+    /* Hero Banner */
+    .hero-section {
+      position: relative;
+      height: 85vh;
+      min-height: 550px;
+      background-color: var(--nour-sand);
+      overflow: hidden;
+    }
+    .hero-bg-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      filter: brightness(0.92);
+      transition: transform 8s ease;
+    }
+    .hero-section:hover .hero-bg-img {
+      transform: scale(1.03);
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.45) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 80px;
+    }
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--nour-white);
+      line-height: 1.1;
+      margin-bottom: 15px;
+    }
+    .hero-subtitle {
+      color: var(--nour-sand);
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      font-size: 0.85rem;
+      margin-bottom: 25px;
+    }
+
+    /* Editorial Buttons */
+    .btn-nour-primary {
+      background-color: var(--nour-black);
+      color: var(--nour-white);
+      border: 1px solid var(--nour-black);
+      padding: 12px 28px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      border-radius: 0;
+      font-weight: 500;
+      transition: var(--transition-smooth);
+    }
+    .btn-nour-primary:hover {
+      background-color: var(--nour-gold);
+      border-color: var(--nour-gold);
+      color: var(--nour-white);
+    }
+    .btn-nour-outline {
+      background-color: transparent;
+      color: var(--nour-white);
+      border: 1px solid var(--nour-white);
+      padding: 12px 28px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      border-radius: 0;
+      font-weight: 500;
+      transition: var(--transition-smooth);
+    }
+    .btn-nour-outline:hover {
+      background-color: var(--nour-white);
+      color: var(--nour-black);
+    }
+    .btn-nour-dark-outline {
+      background-color: transparent;
+      color: var(--nour-black);
+      border: 1px solid var(--nour-black);
+      padding: 10px 22px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      border-radius: 0;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+    }
+    .btn-nour-dark-outline:hover {
+      background-color: var(--nour-black);
+      color: var(--nour-white);
+    }
+
+    /* Section Headers */
+    .section-title-wrap {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+    .section-subtitle {
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      font-size: 0.75rem;
+      color: var(--nour-gold);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      color: var(--nour-black);
+      margin-bottom: 0;
+    }
+
+    /* Category Cards */
+    .cat-card {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      margin-bottom: 24px;
+      background-color: var(--nour-sand);
+    }
+    .cat-card-img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .cat-card:hover .cat-card-img {
+      transform: scale(1.05);
+    }
+    .cat-card-content {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 30px;
+      color: var(--nour-white);
+    }
+    .cat-card-title {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+    .cat-card-link {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--nour-sand);
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Product Cards */
+    .product-card {
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .product-img-wrap {
+      position: relative;
+      background-color: var(--nour-sand-light);
+      overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+    .product-img-primary, .product-img-secondary {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.5s ease, transform 0.6s ease;
+    }
+    .product-img-secondary {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+    .product-card:hover .product-img-secondary {
+      opacity: 1;
+    }
+    .product-card:hover .product-img-primary {
+      transform: scale(1.03);
+    }
+    .product-badges {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 2;
+    }
+    .badge-nour {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 4px 8px;
+      border-radius: 0;
+      font-weight: 600;
+    }
+    .badge-nour-new { background-color: var(--nour-black); color: var(--nour-white); }
+    .badge-nour-sale { background-color: var(--nour-gold); color: var(--nour-white); }
+
+    .wishlist-btn-card {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 34px;
+      height: 34px;
+      background: var(--nour-white);
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: var(--nour-black);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      z-index: 2;
+      transition: var(--transition-smooth);
+    }
+    .wishlist-btn-card:hover, .wishlist-btn-card.active {
+      background-color: #e74c3c;
+      color: var(--nour-white);
+    }
+
+    .quick-add-btn {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(15, 15, 15, 0.9);
+      color: var(--nour-white);
+      border: none;
+      padding: 12px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      transform: translateY(100%);
+      transition: var(--transition-smooth);
+      z-index: 2;
+    }
+    .product-card:hover .quick-add-btn {
+      transform: translateY(0);
+    }
+
+    .product-meta {
+      padding-top: 14px;
+    }
+    .product-title {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .product-category {
+      font-size: 0.75rem;
+      color: var(--nour-gray);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      letter-spacing: 0.05em;
+    }
+    .product-price {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .old-price {
+      text-decoration: line-through;
+      color: var(--nour-gray);
+      margin-left: 8px;
+      font-weight: 400;
+      font-size: 0.85rem;
+    }
+
+    /* Color Swatches */
+    .color-swatches {
+      display: flex;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+
+    /* Editorial Banners */
+    .editorial-banner {
+      background-color: var(--nour-sand);
+      padding: 80px 0;
+      position: relative;
+    }
+
+    /* Drawers (Cart & Mobile Menu) */
+    .drawer {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      max-width: 420px;
+      background-color: var(--nour-white);
+      z-index: 1050;
+      box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+    .drawer-right { right: 0; transform: translateX(100%); }
+    .drawer-left { left: 0; transform: translateX(-100%); }
+    .drawer.active { transform: translateX(0); }
+
+    .drawer-header {
+      padding: 20px 25px;
+      border-bottom: 1px solid var(--nour-gray-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .drawer-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    .drawer-body {
+      padding: 25px;
+      overflow-y: auto;
+      flex-grow: 1;
+    }
+    .drawer-footer {
+      padding: 20px 25px;
+      border-top: 1px solid var(--nour-gray-light);
+      background-color: var(--nour-sand-light);
+    }
+
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 1040;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .drawer-backdrop.active {
+      display: block;
+      opacity: 1;
+    }
+
+    /* Cart Items inside Drawer */
+    .cart-item {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--nour-gray-light);
+    }
+    .cart-item-img {
+      width: 75px;
+      height: 95px;
+      object-fit: cover;
+      background-color: var(--nour-sand);
+    }
+    .cart-item-details { flex-grow: 1; }
+    .cart-item-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+    .cart-item-meta { font-size: 0.75rem; color: var(--nour-gray); margin-bottom: 8px; }
+    .qty-picker {
+      display: inline-flex;
+      border: 1px solid var(--nour-gray-light);
+      align-items: center;
+    }
+    .qty-btn {
+      border: none;
+      background: none;
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+    .qty-input {
+      width: 30px;
+      border: none;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    /* Filter Sidebar */
+    .filter-group {
+      margin-bottom: 25px;
+      border-bottom: 1px solid var(--nour-gray-light);
+      padding-bottom: 20px;
+    }
+    .filter-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .filter-list { list-style: none; padding: 0; margin: 0; }
+    .filter-list li { margin-bottom: 8px; }
+    .filter-check {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--nour-gray);
+      cursor: pointer;
+    }
+    .filter-check input { accent-color: var(--nour-black); }
+
+    /* Footer */
+    footer {
+      background-color: var(--nour-black);
+      color: var(--nour-sand);
+      padding-top: 70px;
+      padding-bottom: 30px;
+      font-size: 0.85rem;
+    }
+    .footer-heading {
+      font-family: var(--font-serif);
+      color: var(--nour-white);
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+      letter-spacing: 0.05em;
+    }
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: 10px; }
+    .footer-links a { color: var(--nour-sand); opacity: 0.75; transition: var(--transition-smooth); }
+    .footer-links a:hover { opacity: 1; color: var(--nour-gold); }
+
+    .newsletter-input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      color: var(--nour-white);
+      padding: 10px 0;
+      width: 100%;
+      border-radius: 0;
+      font-size: 0.85rem;
+    }
+    .newsletter-input:focus {
+      outline: none;
+      border-bottom-color: var(--nour-gold);
+    }
+
+    /* View Switchers (Single Page App Emulation) */
+    .page-view { display: none; }
+    .page-view.active { display: block; }
+
+    /* Responsive Tweaks */
+    @media (max-width: 991px) {
+      .hero-section { height: 65vh; }
+      .cat-card-img { height: 360px; }
+      .desktop-only-nav { display: none !important; }
+    }
+    @media (max-width: 575px) {
+      .brand-logo { font-size: 1.6rem; }
+      .hero-title { font-size: 2.2rem; }
+      .product-img-wrap { aspect-ratio: 3/4; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. ANNOUNCEMENT BAR -->
+  <div class="announcement-bar text-center">
+    <span>Free Express Shipping Across Pakistan on Orders Above PKR 7,500 | New Season '26 Live</span>
+  </div>
+
+  <!-- 2. MAIN NAVIGATION -->
+  <header class="navbar-nour sticky-top">
+    <div class="container-fluid px-lg-5">
+      <div class="row align-items-center">
+        
+        <!-- Mobile Hamburger Toggle -->
+        <div class="col-4 d-lg-none">
+          <button class="header-icon-btn" id="openMobileMenu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <button class="header-icon-btn ms-2" id="openSearchBtnMobile">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <!-- Brand Logo -->
+        <div class="col-4 col-lg-2 text-center text-lg-start">
+          <a href="#" class="nav-route-btn" data-target="view-home">
+            <span class="brand-logo">NOUR & CO.</span>
+            <span class="brand-sub">HAUTE COUTURE</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="col-lg-8 d-none d-lg-block text-center desktop-only-nav">
+          <nav class="d-inline-flex align-items-center">
+            
+            <!-- WOMEN Mega Menu Link -->
+            <div class="has-megamenu">
+              <a href="#" class="nav-link-nour nav-route-btn" data-target="view-category" data-cat="Women">Women</a>
+              <div class="megamenu">
+                <div class="container">
+                  <div class="row text-start">
+                    <div class="col-3">
+                      <h6 class="megamenu-title">Ready To Wear</h6>
+                      <ul class="megamenu-list">
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Kurtis & Shirts</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">2 Piece Suites</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">3 Piece Prestige</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Co-Ord Sets</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Formal & Evening</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="megamenu-title">Unstitched Luxury</h6>
+                      <ul class="megamenu-list">
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">3 Piece Lawn '26</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Chiffon & Silk Luxe</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Embroidered Cotton</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Festive Velvet Edition</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="megamenu-title">Modest & Accessories</h6>
+                      <ul class="megamenu-list">
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Signature Abayas</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Silk Scarves & Hijabs</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Leather Handbags</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Artisanal Footwear</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-3">
+                      <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=600" alt="Women New" class="img-fluid mb-2" style="height: 180px; width: 100%; object-fit: cover;">
+                      <span class="d-block text-uppercase font-serif fs-6">The Velvet Edit</span>
+                      <a href="#" class="text-xs text-uppercase text-gold fw-bold nav-route-btn" data-target="view-category">Shop Campaign &rarr;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MEN Mega Menu Link -->
+            <div class="has-megamenu">
+              <a href="#" class="nav-link-nour nav-route-btn" data-target="view-category" data-cat="Men">Men</a>
+              <div class="megamenu">
+                <div class="container">
+                  <div class="row text-start">
+                    <div class="col-3">
+                      <h6 class="megamenu-title">Traditional Wear</h6>
+                      <ul class="megamenu-list">
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Shalwar Kameez Suits</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Designer Kurtas</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Waistcoats</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Prince Coats</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="megamenu-title">Fabrics & Unstitched</h6>
+                      <ul class="megamenu-list">
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Egyptian Latha</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Wash & Wear Luxe</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Handspun Khaddar</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-3">
+                      <h6 class="megamenu-title">Accessories</h6>
+                      <ul class="megamenu-list">
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Handcrafted Peshawari Chappal</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Cufflinks & Buttons</a></li>
+                        <li><a href="#" class="nav-route-btn" data-target="view-category">Oud & Fragrances</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-3">
+                      <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=600" alt="Men New" class="img-fluid mb-2" style="height: 180px; width: 100%; object-fit: cover;">
+                      <span class="d-block text-uppercase font-serif fs-6">Royal Groom Edition</span>
+                      <a href="#" class="text-xs text-uppercase text-gold fw-bold nav-route-btn" data-target="view-category">Explore Collection &rarr;</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="#" class="nav-link-nour nav-route-btn" data-target="view-category">New Arrivals</a>
+            <a href="#" class="nav-link-nour nav-route-btn" data-target="view-category">Collections</a>
+            <a href="#" class="nav-link-nour nav-route-btn" data-target="view-category">Best Sellers</a>
+            <a href="#" class="nav-link-nour text-danger nav-route-btn" data-target="view-category">Sale</a>
+          </nav>
+        </div>
+
+        <!-- Action Icons (Search, Account, Wishlist, Cart) -->
+        <div class="col-4 col-lg-2 text-end">
+          <button class="header-icon-btn d-none d-lg-inline-block" id="openSearchBtnDesktop">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <a href="#" class="header-icon-btn d-none d-lg-inline-block nav-route-btn" data-target="view-account">
+            <i class="fa-regular fa-user"></i>
+          </a>
+          <a href="#" class="header-icon-btn nav-route-btn" data-target="view-wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge-count wishlist-count">2</span>
+          </a>
+          <button class="header-icon-btn" id="openCartBtn">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="badge-count cart-count">3</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- SEARCH OVERLAY / MODAL -->
+  <div id="searchOverlay" class="position-fixed top-0 start-0 w-100 bg-white shadow-lg p-4" style="display: none; z-index: 2000; border-bottom: 2px solid var(--nour-gold);">
+    <div class="container position-relative">
+      <button id="closeSearchBtn" class="btn-close position-absolute top-0 end-0"></button>
+      <div class="row justify-content-center py-4">
+        <div class="col-md-8 text-center">
+          <h4 class="font-serif mb-3">Search NOUR & CO.</h4>
+          <div class="input-group input-group-lg border-bottom border-dark">
+            <input type="text" id="searchInput" class="form-control border-0 rounded-0 shadow-none" placeholder="Search kurtis, unstitched lawn, waistcoats...">
+            <button class="btn btn-link text-dark" type="button"><i class="fa-solid fa-arrow-right fs-4"></i></button>
+          </div>
+          <div class="d-flex gap-3 justify-content-center mt-3 text-muted text-uppercase fs-7">
+            <span>Popular:</span>
+            <a href="#" class="text-dark nav-route-btn" data-target="view-category">Velvet 3-Piece</a>
+            <a href="#" class="text-dark nav-route-btn" data-target="view-category">Khaddar Kurta</a>
+            <a href="#" class="text-dark nav-route-btn" data-target="view-category">Peshawari Chappal</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN SPA VIEW CONTAINERS -->
+  <main id="app-container">
+
+    <!-- ================= VIEW 1: HOMEPAGE ================= -->
+    <div id="view-home" class="page-view active">
+      
+      <!-- HERO BANNER -->
+      <section class="hero-section">
+        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=1800" class="hero-bg-img" alt="NOUR & CO. Festive Collection 2026">
+        <div class="hero-overlay">
+          <div class="container-fluid px-lg-5">
+            <div class="col-lg-6">
+              <p class="hero-subtitle">FESTIVE HAUTE COUTURE '26</p>
+              <h1 class="hero-title">Crafting Timeless Heritage & Modern Elegance</h1>
+              <div class="d-flex gap-3">
+                <a href="#" class="btn btn-nour-primary nav-route-btn" data-target="view-category" data-cat="Women">Shop Women</a>
+                <a href="#" class="btn btn-nour-outline nav-route-btn" data-target="view-category" data-cat="Men">Shop Men</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SHOP BY CATEGORY -->
+      <section class="py-5">
+        <div class="container-fluid px-lg-5">
+          <div class="section-title-wrap">
+            <span class="section-subtitle">CURATED CATEGORIES</span>
+            <h2 class="section-title">Explore The World of NOUR</h2>
+          </div>
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+              <a href="#" class="cat-card nav-route-btn" data-target="view-category" data-cat="Ready To Wear">
+                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=800" class="cat-card-img" alt="Women Pret">
+                <div class="cat-card-content">
+                  <h3 class="cat-card-title">Ready To Wear</h3>
+                  <span class="cat-card-link">Explore Collection <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <a href="#" class="cat-card nav-route-btn" data-target="view-category" data-cat="Unstitched Lawn">
+                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=800" class="cat-card-img" alt="Unstitched Lawn">
+                <div class="cat-card-content">
+                  <h3 class="cat-card-title">Unstitched Luxury</h3>
+                  <span class="cat-card-link">Discover Prints <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <a href="#" class="cat-card nav-route-btn" data-target="view-category" data-cat="Men Traditional">
+                <img src="https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?auto=format&fit=crop&q=80&w=800" class="cat-card-img" alt="Men's Apparel">
+                <div class="cat-card-content">
+                  <h3 class="cat-card-title">Men's Apparel</h3>
+                  <span class="cat-card-link">View Kurta Sets <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <a href="#" class="cat-card nav-route-btn" data-target="view-category" data-cat="Accessories">
+                <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&q=80&w=800" class="cat-card-img" alt="Luxe Accessories">
+                <div class="cat-card-content">
+                  <h3 class="cat-card-title">Luxe Accessories</h3>
+                  <span class="cat-card-link">Shop Footwear & Bags <i class="fa-solid fa-arrow-right-long"></i></span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW ARRIVALS GRID -->
+      <section class="py-5 bg-light">
+        <div class="container-fluid px-lg-5">
+          <div class="d-flex justify-content-between align-items-end mb-4">
+            <div>
+              <span class="section-subtitle">JUST DROPPED</span>
+              <h2 class="section-title mb-0">New Season Arrivals</h2>
+            </div>
+            <a href="#" class="btn btn-nour-dark-outline nav-route-btn" data-target="view-category">View All Products</a>
+          </div>
+
+          <div class="row g-4" id="home-products-grid">
+            <!-- Dynamic Injection via JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- EDITORIAL SPLIT PROMO -->
+      <section class="py-5">
+        <div class="container-fluid px-lg-5">
+          <div class="row g-0 bg-dark text-white align-items-center">
+            <div class="col-lg-6">
+              <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200" class="img-fluid w-100" style="min-height: 500px; object-fit: cover;" alt="Editorial Collection">
+            </div>
+            <div class="col-lg-6 p-5 p-lg-5">
+              <span class="text-gold text-uppercase letter-spacing-2 fw-bold fs-7 mb-2 d-block">LIMITED EDITION</span>
+              <h2 class="font-serif display-4 mb-3">The Royal Velvet Suite '26</h2>
+              <p class="text-sand mb-4 leading-relaxed opacity-75">Intricately woven zari embroidery on high-grade royal velvet paired with organza tissue dupattas. Designed for grand celebrations and memorable evenings.</p>
+              <a href="#" class="btn btn-nour-outline nav-route-btn" data-target="view-category">Explore The Suite</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BEST SELLERS CAROUSEL / GRID -->
+      <section class="py-5">
+        <div class="container-fluid px-lg-5">
+          <div class="section-title-wrap">
+            <span class="section-subtitle">MOST COVETED</span>
+            <h2 class="section-title">Best Sellers of The Season</h2>
+          </div>
+          <div class="row g-4" id="bestseller-products-grid">
+            <!-- Dynamic Injection via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- INSTAGRAM EDITORIAL GALLERY -->
+      <section class="py-5 bg-sand-light">
+        <div class="container-fluid px-lg-5">
+          <div class="text-center mb-4">
+            <span class="section-subtitle">#NOURinCo</span>
+            <h2 class="section-title">Follow Our Style Journey</h2>
+            <p class="text-muted fs-7">Tag @NourCouture to be featured on our official editorial feed</p>
+          </div>
+          <div class="row g-2">
+            <div class="col-6 col-md-4 col-lg-2">
+              <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400" class="img-fluid w-100" style="height:220px; object-fit:cover;" alt="Insta 1">
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&q=80&w=400" class="img-fluid w-100" style="height:220px; object-fit:cover;" alt="Insta 2">
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&q=80&w=400" class="img-fluid w-100" style="height:220px; object-fit:cover;" alt="Insta 3">
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=400" class="img-fluid w-100" style="height:220px; object-fit:cover;" alt="Insta 4">
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <img src="https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&q=80&w=400" class="img-fluid w-100" style="height:220px; object-fit:cover;" alt="Insta 5">
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <img src="https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?auto=format&fit=crop&q=80&w=400" class="img-fluid w-100" style="height:220px; object-fit:cover;" alt="Insta 6">
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ================= VIEW 2: CATEGORY / COLLECTION LISTING ================= -->
+    <div id="view-category" class="page-view">
+      <div class="container-fluid px-lg-5 py-4">
+        
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb fs-7 text-uppercase mb-3">
+            <li class="breadcrumb-item"><a href="#" class="nav-route-btn" data-target="view-home">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Women</a></li>
+            <li class="breadcrumb-item active" id="category-breadcrumb-title">Ready To Wear</li>
+          </ol>
+        </nav>
+
+        <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+          <div>
+            <h1 class="font-serif fs-2 mb-1" id="category-page-title">Ready To Wear Pret</h1>
+            <p class="text-muted fs-7 mb-0">Showing <span id="product-count-label">8</span> artisan handcrafted garments</p>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <button class="btn btn-nour-dark-outline d-lg-none" id="openMobileFilter">
+              <i class="fa-solid fa-sliders me-1"></i> Filters
+            </button>
+            <div class="d-flex align-items-center gap-2">
+              <span class="fs-7 text-uppercase d-none d-sm-inline">Sort By:</span>
+              <select class="form-select form-select-sm border-dark rounded-0 shadow-none" style="width: auto;" id="sortSelect">
+                <option value="featured">Featured</option>
+                <option value="newest">Newest First</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          
+          <!-- LEFT SIDEBAR FILTERS (DESKTOP) -->
+          <div class="col-lg-3 d-none d-lg-block pe-lg-4">
+            <div class="filter-group">
+              <h5 class="filter-title">Category</h5>
+              <ul class="filter-list">
+                <li><label class="filter-check"><input type="checkbox" checked> Ready To Wear (12)</label></li>
+                <li><label class="filter-check"><input type="checkbox"> Unstitched 3-Piece (18)</label></li>
+                <li><label class="filter-check"><input type="checkbox"> Formals & Velvet (8)</label></li>
+                <li><label class="filter-check"><input type="checkbox"> Western Tops (6)</label></li>
+              </ul>
+            </div>
+
+            <div class="filter-group">
+              <h5 class="filter-title">Fabric</h5>
+              <ul class="filter-list">
+                <li><label class="filter-check"><input type="checkbox"> Luxury Lawn</label></li>
+                <li><label class="filter-check"><input type="checkbox"> Pure Chiffon</label></li>
+                <li><label class="filter-check"><input type="checkbox"> Khaddar & Linen</label></li>
+                <li><label class="filter-check"><input type="checkbox"> Royal Velvet</label></li>
+                <li><label class="filter-check"><input type="checkbox"> Raw Silk</label></li>
+              </ul>
+            </div>
+
+            <div class="filter-group">
+              <h5 class="filter-title">Size</h5>
+              <div class="d-flex flex-wrap gap-2">
+                <button class="btn btn-outline-dark btn-sm rounded-0 px-3">XS</button>
+                <button class="btn btn-outline-dark btn-sm rounded-0 px-3">S</button>
+                <button class="btn btn-outline-dark btn-sm rounded-0 px-3">M</button>
+                <button class="btn btn-outline-dark btn-sm rounded-0 px-3">L</button>
+                <button class="btn btn-outline-dark btn-sm rounded-0 px-3">XL</button>
+              </div>
+            </div>
+
+            <div class="filter-group">
+              <h5 class="filter-title">Price Range</h5>
+              <input type="range" class="form-range" min="3000" max="45000" id="priceRange">
+              <div class="d-flex justify-content-between fs-7 text-muted mt-1">
+                <span>PKR 3,000</span>
+                <span>PKR 45,000</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT PRODUCT GRID -->
+          <div class="col-lg-9">
+            <div class="row g-4" id="category-products-grid">
+              <!-- Dynamically Populated -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= VIEW 3: PRODUCT DETAIL PAGE (PDP) ================= -->
+    <div id="view-pdp" class="page-view">
+      <div class="container-fluid px-lg-5 py-4">
+        
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb fs-7 text-uppercase mb-4">
+            <li class="breadcrumb-item"><a href="#" class="nav-route-btn" data-target="view-home">Home</a></li>
+            <li class="breadcrumb-item"><a href="#" class="nav-route-btn" data-target="view-category">Women</a></li>
+            <li class="breadcrumb-item active" id="pdp-breadcrumb">Embroidered Velvet 3-Piece</li>
+          </ol>
+        </nav>
+
+        <div class="row g-5">
+          
+          <!-- LEFT: IMAGE GALLERY -->
+          <div class="col-lg-7">
+            <div class="row g-2">
+              <div class="col-2 d-none d-md-block">
+                <div class="d-flex flex-column gap-2">
+                  <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=300" class="img-fluid border border-dark pdp-thumb" style="cursor:pointer; aspect-ratio:3/4; object-fit:cover;" alt="Thumb 1">
+                  <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=300" class="img-fluid border pdp-thumb" style="cursor:pointer; aspect-ratio:3/4; object-fit:cover;" alt="Thumb 2">
+                  <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=300" class="img-fluid border pdp-thumb" style="cursor:pointer; aspect-ratio:3/4; object-fit:cover;" alt="Thumb 3">
+                </div>
+              </div>
+              <div class="col-md-10">
+                <div class="position-relative bg-light">
+                  <img id="pdp-main-image" src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=1000" class="img-fluid w-100" style="aspect-ratio:3/4; object-fit:cover;" alt="Main Product">
+                  <span class="badge-nour badge-nour-sale position-absolute top-0 start-0 m-3 fs-6">20% OFF</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: PRODUCT DETAILS & PURCHASING OPTIONS -->
+          <div class="col-lg-5">
+            <span class="text-uppercase text-gold letter-spacing-2 fs-7 fw-bold">NOUR PRESTIGE COLLECTION</span>
+            <h1 class="font-serif display-6 my-2" id="pdp-title">Embroidered Micro-Velvet 3-Piece Suite</h1>
+            
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <div class="text-warning fs-7">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+              <span class="fs-7 text-muted">(48 Verified Reviews)</span>
+            </div>
+
+            <div class="mb-4">
+              <span class="fs-3 fw-bold me-2" id="pdp-price">PKR 18,950</span>
+              <span class="old-price fs-5" id="pdp-old-price">PKR 23,500</span>
+              <span class="text-danger fs-7 ms-2 fw-bold">(Save PKR 4,550)</span>
+            </div>
+
+            <p class="text-muted fs-7 leading-relaxed mb-4">
+              Crafted from premium 9000-micro velvet featuring intricate gold tilla thread work along the neckline, hem, and sleeves. Paired with a tissue organza dupatta and tailored raw silk pants.
+            </p>
+
+            <!-- Color Options -->
+            <div class="mb-4">
+              <label class="fw-bold fs-7 text-uppercase d-block mb-2">Color: <span class="fw-normal" id="selected-color">Emerald Green</span></label>
+              <div class="d-flex gap-2">
+                <button class="btn p-0 rounded-circle border border-2 border-dark" style="width:28px; height:28px; background:#0B3B26;"></button>
+                <button class="btn p-0 rounded-circle border" style="width:28px; height:28px; background:#4A0E17;"></button>
+                <button class="btn p-0 rounded-circle border" style="width:28px; height:28px; background:#0F0F0F;"></button>
+              </div>
+            </div>
+
+            <!-- Size Options -->
+            <div class="mb-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <label class="fw-bold fs-7 text-uppercase mb-0">Select Size:</label>
+                <a href="#" class="fs-7 text-dark text-decoration-underline" data-bs-toggle="modal" data-bs-target="#sizeGuideModal">Size Guide</a>
+              </div>
+              <div class="d-flex gap-2">
+                <button class="btn btn-outline-dark rounded-0 px-3 py-2 fs-7 pdp-size-btn">S</button>
+                <button class="btn btn-dark rounded-0 px-3 py-2 fs-7 pdp-size-btn active">M</button>
+                <button class="btn btn-outline-dark rounded-0 px-3 py-2 fs-7 pdp-size-btn">L</button>
+                <button class="btn btn-outline-dark rounded-0 px-3 py-2 fs-7 pdp-size-btn">XL</button>
+              </div>
+            </div>
+
+            <!-- Quantity & Add to Cart -->
+            <div class="d-flex gap-3 mb-4">
+              <div class="qty-picker px-2 py-1">
+                <button class="qty-btn" id="pdp-qty-minus"><i class="fa-solid fa-minus"></i></button>
+                <input type="text" value="1" id="pdp-qty-input" class="qty-input" readonly>
+                <button class="qty-btn" id="pdp-qty-plus"><i class="fa-solid fa-plus"></i></button>
+              </div>
+              <button class="btn btn-nour-primary flex-grow-1 py-3" id="pdp-add-to-bag">
+                <i class="fa-solid fa-bag-shopping me-2"></i> Add To Bag
+              </button>
+              <button class="btn btn-outline-dark rounded-0 px-3" id="pdp-wishlist-btn">
+                <i class="fa-regular fa-heart"></i>
+              </button>
+            </div>
+
+            <!-- Accordion Details -->
+            <div class="accordion accordion-flush border-top" id="pdpAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed font-serif fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#acc1">
+                    Fabric & Craftsmanship Details
+                  </button>
+                </h2>
+                <div id="acc1" class="accordion-collapse collapse show" data-bs-parent="#pdpAccordion">
+                  <div class="accordion-body text-muted fs-7">
+                    <ul>
+                      <li>Shirt: Micro-Velvet with Embroidered Zari Front & Sleeves</li>
+                      <li>Dupatta: Embellished Digital Printed Tissue Organza</li>
+                      <li>Trouser: Dyed Solid Raw Silk</li>
+                      <li>Dry Clean Only</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed font-serif fs-6" type="button" data-bs-toggle="collapse" data-bs-target="#acc2">
+                    Shipping & Delivery Timeline
+                  </button>
+                </h2>
+                <div id="acc2" class="accordion-collapse collapse" data-bs-parent="#pdpAccordion">
+                  <div class="accordion-body text-muted fs-7">
+                    Standard Shipping: 3-5 Business Days across Pakistan.<br>
+                    International Express: 7-10 Business Days via DHL.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= VIEW 4: CHECKOUT ================= -->
+    <div id="view-checkout" class="page-view">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <h1 class="brand-logo fs-1">NOUR & CO.</h1>
+          <p class="text-muted fs-7 text-uppercase letter-spacing-2">Secure Checkout</p>
+        </div>
+
+        <div class="row g-5">
+          <!-- Customer Details -->
+          <div class="col-lg-7">
+            <h4 class="font-serif mb-4">1. Shipping Address</h4>
+            <form id="checkoutForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fs-7 text-uppercase fw-bold">First Name</label>
+                  <input type="text" class="form-control rounded-0" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fs-7 text-uppercase fw-bold">Last Name</label>
+                  <input type="text" class="form-control rounded-0" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fs-7 text-uppercase fw-bold">Email Address</label>
+                  <input type="email" class="form-control rounded-0" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fs-7 text-uppercase fw-bold">Street Address</label>
+                  <input type="text" class="form-control rounded-0" placeholder="House/Apartment #, Street, Sector" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fs-7 text-uppercase fw-bold">City</label>
+                  <select class="form-select rounded-0" required>
+                    <option value="">Select City</option>
+                    <option>Karachi</option>
+                    <option>Lahore</option>
+                    <option>Islamabad</option>
+                    <option>Rawalpindi</option>
+                    <option>Faisalabad</option>
+                    <option>Multan</option>
+                    <option>Peshawar</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fs-7 text-uppercase fw-bold">Phone (Mobile)</label>
+                  <input type="tel" class="form-control rounded-0" placeholder="03001234567" required>
+                </div>
+              </div>
+
+              <h4 class="font-serif mt-5 mb-4">2. Payment Method</h4>
+              <div class="list-group rounded-0 mb-4">
+                <label class="list-group-item d-flex gap-3 align-items-center">
+                  <input class="form-check-input flex-shrink-0" type="radio" name="payMethod" checked>
+                  <div>
+                    <strong class="d-block fs-7 text-uppercase">Cash On Delivery (COD)</strong>
+                    <small class="text-muted">Pay with cash upon package delivery</small>
+                  </div>
+                </label>
+                <label class="list-group-item d-flex gap-3 align-items-center">
+                  <input class="form-check-input flex-shrink-0" type="radio" name="payMethod">
+                  <div>
+                    <strong class="d-block fs-7 text-uppercase">Credit / Debit Card</strong>
+                    <small class="text-muted">Visa, Mastercard, UnionPay</small>
+                  </div>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-nour-primary w-100 py-3 mt-3">Complete Order &rarr;</button>
+            </form>
+          </div>
+
+          <!-- Order Summary Sidebar -->
+          <div class="col-lg-5">
+            <div class="bg-sand-light p-4 border">
+              <h4 class="font-serif mb-4">Order Summary</h4>
+              <div id="checkout-summary-list">
+                <!-- Dynamically populated from JavaScript Cart State -->
+              </div>
+              <hr>
+              <div class="d-flex justify-content-between fs-7 mb-2">
+                <span>Subtotal</span>
+                <span id="checkout-subtotal">PKR 0</span>
+              </div>
+              <div class="d-flex justify-content-between fs-7 mb-2">
+                <span>Shipping Fee</span>
+                <span class="text-success">FREE</span>
+              </div>
+              <hr>
+              <div class="d-flex justify-content-between fs-5 fw-bold">
+                <span>Total Amount</span>
+                <span id="checkout-total">PKR 0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= VIEW 5: ADMIN DASHBOARD ================= -->
+    <div id="view-admin" class="page-view">
+      <div class="container-fluid px-lg-5 py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+          <div>
+            <h1 class="font-serif fs-2 mb-0">Store Command Center</h1>
+            <span class="text-muted fs-7">NOUR & CO. E-Commerce Backoffice Admin</span>
+          </div>
+          <button class="btn btn-nour-primary nav-route-btn" data-target="view-home">Exit Admin Mode</button>
+        </div>
+
+        <div class="row g-4 mb-5">
+          <div class="col-md-3">
+            <div class="p-4 border bg-sand-light">
+              <span class="text-uppercase fs-7 text-muted fw-bold d-block">Monthly Sales</span>
+              <span class="fs-2 font-serif text-dark">PKR 4.85M</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-4 border bg-sand-light">
+              <span class="text-uppercase fs-7 text-muted fw-bold d-block">Total Orders</span>
+              <span class="fs-2 font-serif text-dark">1,240</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-4 border bg-sand-light">
+              <span class="text-uppercase fs-7 text-muted fw-bold d-block">Active Inventory</span>
+              <span class="fs-2 font-serif text-dark">850 SKUs</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="p-4 border bg-sand-light">
+              <span class="text-uppercase fs-7 text-muted fw-bold d-block">Pending Orders</span>
+              <span class="fs-2 font-serif text-gold">14</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Admin Data Tables -->
+        <h3 class="font-serif mb-3">Product Catalog Management</h3>
+        <div class="table-responsive border mb-5">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-dark text-uppercase fs-7">
+              <tr>
+                <th>Product SKU</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>NOUR-W-01</td>
+                <td>Embroidered Micro-Velvet 3-Piece</td>
+                <td>Ready To Wear</td>
+                <td>PKR 18,950</td>
+                <td>24 Units</td>
+                <td><span class="badge bg-success">In Stock</span></td>
+                <td><button class="btn btn-sm btn-outline-dark">Edit</button></td>
+              </tr>
+              <tr>
+                <td>NOUR-W-02</td>
+                <td>Chiffon Printed Kurti</td>
+                <td>Kurtis & Tops</td>
+                <td>PKR 6,500</td>
+                <td>5 Units</td>
+                <td><span class="badge bg-warning text-dark">Low Stock</span></td>
+                <td><button class="btn btn-sm btn-outline-dark">Edit</button></td>
+              </tr>
+              <tr>
+                <td>NOUR-M-01</td>
+                <td>Royal Egyptian Cotton Kurta Set</td>
+                <td>Men Traditional</td>
+                <td>PKR 12,500</td>
+                <td>40 Units</td>
+                <td><span class="badge bg-success">In Stock</span></td>
+                <td><button class="btn btn-sm btn-outline-dark">Edit</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- CART DRAWER (SIDE MODAL) -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <div class="drawer drawer-right" id="cartDrawer">
+    <div class="drawer-header">
+      <h3 class="drawer-title">Shopping Bag (<span class="cart-count">0</span>)</h3>
+      <button class="btn-close" id="closeCartBtn"></button>
+    </div>
+    <div class="drawer-body" id="cart-drawer-items">
+      <!-- Injected via JavaScript -->
+    </div>
+    <div class="drawer-footer">
+      <div class="d-flex justify-content-between font-serif fs-5 mb-3">
+        <span>Subtotal</span>
+        <span id="cart-subtotal-val">PKR 0</span>
+      </div>
+      <p class="text-muted fs-7 mb-3">Taxes and nationwide shipping calculated at checkout.</p>
+      <a href="#" class="btn btn-nour-primary w-100 py-3 nav-route-btn" data-target="view-checkout">Proceed To Checkout &rarr;</a>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU DRAWER -->
+  <div class="drawer drawer-left" id="mobileMenuDrawer">
+    <div class="drawer-header">
+      <span class="brand-logo fs-3">NOUR & CO.</span>
+      <button class="btn-close" id="closeMobileMenuBtn"></button>
+    </div>
+    <div class="drawer-body">
+      <ul class="nav flex-column gap-2 text-uppercase font-serif fs-5">
+        <li class="nav-item"><a href="#" class="nav-link text-dark nav-route-btn" data-target="view-category" data-cat="Women">Women</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-dark nav-route-btn" data-target="view-category" data-cat="Men">Men</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-dark nav-route-btn" data-target="view-category">New Arrivals</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-dark nav-route-btn" data-target="view-category">Unstitched '26</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-danger nav-route-btn" data-target="view-category">Festive Sale</a></li>
+        <li class="nav-item border-top pt-3"><a href="#" class="nav-link text-dark nav-route-btn" data-target="view-admin">Admin Dashboard</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container-fluid px-lg-5">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-3">
+          <span class="brand-logo text-white fs-2 mb-3 d-block">NOUR & CO.</span>
+          <p class="text-sand opacity-75 fs-7 leading-relaxed">
+            Pakistan’s premier haute couture & Pret fashion house. Crafting modern luxury while preserving ancient oriental heritage craftsmanship.
+          </p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-heading">Collections</h5>
+          <ul class="footer-links">
+            <li><a href="#" class="nav-route-btn" data-target="view-category">Ready To Wear</a></li>
+            <li><a href="#" class="nav-route-btn" data-target="view-category">Unstitched Lawn</a></li>
+            <li><a href="#" class="nav-route-btn" data-target="view-category">Men's Apparel</a></li>
+            <li><a href="#" class="nav-route-btn" data-target="view-category">Silk Scarves</a></li>
+            <li><a href="#" class="nav-route-btn" data-target="view-category">Bridal Couture</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5 class="footer-heading">Customer Care</h5>
+          <ul class="footer-links">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Order Tracking</a></li>
+            <li><a href="#">Size Guide</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2">
+          <h5 class="footer-heading">System Portal</h5>
+          <ul class="footer-links">
+            <li><a href="#" class="nav-route-btn" data-target="view-admin">Backoffice Admin</a></li>
+            <li><a href="#">Store Locator</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h5 class="footer-heading">Newsletter</h5>
+          <p class="text-sand opacity-75 fs-7 mb-3">Subscribe to receive exclusive preview access to new seasonal drops.</p>
+          <div class="position-relative">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address...">
+            <button class="btn btn-link text-gold position-absolute top-0 end-0 p-0 pt-2"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row pt-4 border-top border-secondary align-items-center fs-7 text-muted">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          &copy; 2026 NOUR & CO. Couture Ltd. All Rights Reserved.
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <span class="me-3"><i class="fa-brands fa-cc-visa fs-5"></i></span>
+          <span class="me-3"><i class="fa-brands fa-cc-mastercard fs-5"></i></span>
+          <span><i class="fa-solid fa-truck-fast fs-5"></i> Cash On Delivery</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JQUERY & BOOTSTRAP 5 JS -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- APPLICATION LOGIC & STATE ENGINE -->
+  <script>
+    // 1. DATA MODELS & STATE
+    const PRODUCTS = [
+      {
+        id: 'p1',
+        name: 'Embroidered Micro-Velvet 3-Piece',
+        category: 'Ready To Wear',
+        price: 18950,
+        oldPrice: 23500,
+        imgPrimary: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&q=80&w=800',
+        imgSecondary: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=800',
+        badge: 'SALE',
+        rating: 4.8
+      },
+      {
+        id: 'p2',
+        name: 'Royal Egyptian Cotton Kurta Set',
+        category: 'Men Traditional',
+        price: 12500,
+        oldPrice: 0,
+        imgPrimary: 'https://images.unsplash.com/photo-1605518216938-7c31b7b14ad0?auto=format&fit=crop&q=80&w=800',
+        imgSecondary: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800',
+        badge: 'NEW',
+        rating: 4.9
+      },
+      {
+        id: 'p3',
+        name: 'Luxury Lawn 3-Piece Floral Print',
+        category: 'Unstitched Lawn',
+        price: 8950,
+        oldPrice: 11000,
+        imgPrimary: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&q=80&w=800',
+        imgSecondary: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=800',
+        badge: 'BESTSELLER',
+        rating: 4.7
+      },
+      {
+        id: 'p4',
+        name: 'Chiffon Draped Evening Dress',
+        category: 'Western / Pret',
+        price: 15400,
+        oldPrice: 0,
+        imgPrimary: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800',
+        imgSecondary: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&q=80&w=800',
+        badge: 'NEW',
+        rating: 5.0
+      }
+    ];
+
+    let cartState = [
+      { product: PRODUCTS[0], qty: 1, size: 'M' },
+      { product: PRODUCTS[1], qty: 1, size: 'L' }
+    ];
+
+    // 2. RENDER FUNCTIONS
+    function renderProductCard(p) {
+      return `
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+            <div class="product-img-wrap">
+              <div class="product-badges">
+                ${p.badge ? `<span class="badge-nour ${p.badge==='SALE'?'badge-nour-sale':'badge-nour-new'}">${p.badge}</span>` : ''}
+              </div>
+              <button class="wishlist-btn-card"><i class="fa-regular fa-heart"></i></button>
+              <img src="${p.imgPrimary}" class="product-img-primary" alt="${p.name}">
+              <img src="${p.imgSecondary}" class="product-img-secondary" alt="${p.name}">
+              <button class="quick-add-btn nav-route-btn" data-target="view-pdp">Quick View</button>
+            </div>
+            <div class="product-meta">
+              <div class="product-category">${p.category}</div>
+              <h4 class="product-title"><a href="#" class="nav-route-btn" data-target="view-pdp">${p.name}</a></h4>
+              <div class="product-price">
+                PKR ${p.price.toLocaleString()}
+                ${p.oldPrice ? `<span class="old-price">PKR ${p.oldPrice.toLocaleString()}</span>` : ''}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function updateCartUI() {
+      const cartContainer = $('#cart-drawer-items');
+      const checkoutList = $('#checkout-summary-list');
+      cartContainer.empty();
+      checkoutList.empty();
+
+      let subtotal = 0;
+      let totalCount = 0;
+
+      cartState.forEach((item, index) => {
+        subtotal += item.product.price * item.qty;
+        totalCount += item.qty;
+
+        cartContainer.append(`
+          <div class="cart-item">
+            <img src="${item.product.imgPrimary}" class="cart-item-img" alt="Product">
+            <div class="cart-item-details">
+              <h5 class="cart-item-title">${item.product.name}</h5>
+              <div class="cart-item-meta">Size: ${item.size} | PKR ${item.product.price.toLocaleString()}</div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="qty-picker">
+                  <button class="qty-btn cart-qty-change" data-index="${index}" data-delta="-1"><i class="fa-solid fa-minus"></i></button>
+                  <span class="qty-input">${item.qty}</span>
+                  <button class="qty-btn cart-qty-change" data-index="${index}" data-delta="1"><i class="fa-solid fa-plus"></i></button>
+                </div>
+                <button class="btn btn-link text-danger fs-7 p-0 remove-cart-item" data-index="${index}">Remove</button>
+              </div>
+            </div>
+          </div>
+        `);
+
+        checkoutList.append(`
+          <div class="d-flex justify-content-between align-items-center mb-3 fs-7">
+            <div>
+              <span class="fw-bold">${item.product.name}</span>
+              <div class="text-muted">Qty: ${item.qty} | Size: ${item.size}</div>
+            </div>
+            <span>PKR ${(item.product.price * item.qty).toLocaleString()}</span>
+          </div>
+        `);
+      });
+
+      $('.cart-count').text(totalCount);
+      $('#cart-subtotal-val').text('PKR ' + subtotal.toLocaleString());
+      $('#checkout-subtotal').text('PKR ' + subtotal.toLocaleString());
+      $('#checkout-total').text('PKR ' + subtotal.toLocaleString());
+    }
+
+    // 3. EVENT HANDLERS & ROUTING
+    $(document).ready(function() {
+      // Inject Initial Products
+      PRODUCTS.forEach(p => {
+        $('#home-products-grid').append(renderProductCard(p));
+        $('#bestseller-products-grid').append(renderProductCard(p));
+        $('#category-products-grid').append(renderProductCard(p));
+      });
+
+      updateCartUI();
+
+      // SPA Navigation Engine
+      $(document).on('click', '.nav-route-btn', function(e) {
+        e.preventDefault();
+        const targetView = $(this).data('target');
+        
+        $('.page-view').removeClass('active');
+        $('#' + targetView).addClass('active');
+
+        // Close drawers on navigation
+        $('.drawer, .drawer-backdrop').removeClass('active');
+
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // Cart Drawer Controls
+      $('#openCartBtn').on('click', function() {
+        $('#cartDrawer, #drawerBackdrop').addClass('active');
+      });
+      $('#closeCartBtn, #drawerBackdrop').on('click', function() {
+        $('.drawer, .drawer-backdrop').removeClass('active');
+      });
+
+      // Mobile Menu Controls
+      $('#openMobileMenu').on('click', function() {
+        $('#mobileMenuDrawer, #drawerBackdrop').addClass('active');
+      });
+      $('#closeMobileMenuBtn').on('click', function() {
+        $('#mobileMenuDrawer, #drawerBackdrop').removeClass('active');
+      });
+
+      // Search Overlay Controls
+      $('#openSearchBtnDesktop, #openSearchBtnMobile').on('click', function() {
+        $('#searchOverlay').slideDown(250);
+      });
+      $('#closeSearchBtn').on('click', function() {
+        $('#searchOverlay').slideUp(200);
+      });
+
+      // Cart Quantity Engine
+      $(document).on('click', '.cart-qty-change', function() {
+        const index = $(this).data('index');
+        const delta = parseInt($(this).data('delta'));
+        cartState[index].qty += delta;
+        if(cartState[index].qty <= 0) cartState.splice(index, 1);
+        updateCartUI();
+      });
+
+      $(document).on('click', '.remove-cart-item', function() {
+        const index = $(this).data('index');
+        cartState.splice(index, 1);
+        updateCartUI();
+      });
+
+      // Add to Bag PDP
+      $('#pdp-add-to-bag').on('click', function() {
+        const qty = parseInt($('#pdp-qty-input').val());
+        cartState.push({ product: PRODUCTS[0], qty: qty, size: 'M' });
+        updateCartUI();
+        $('#cartDrawer, #drawerBackdrop').addClass('active');
+      });
+
+      // PDP Quantity Picker
+      $('#pdp-qty-plus').on('click', function() {
+        let val = parseInt($('#pdp-qty-input').val());
+        $('#pdp-qty-input').val(val + 1);
+      });
+      $('#pdp-qty-minus').on('click', function() {
+        let val = parseInt($('#pdp-qty-input').val());
+        if(val > 1) $('#pdp-qty-input').val(val - 1);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Discounts | AYRA Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/admin.css">
+</head><body class="admin"><div class="admin-shell"><aside class="admin-side">
+  <a class="brand" href="index.html">AYRA<small>Atelier admin</small></a>
+  <div class="grp">Overview</div>
+  <a href="index.html" class="">Dashboard</a>
+  <div class="grp">Catalog</div>
+  <a href="products.html" class="">Products</a>
+  <a href="product-form.html" class="">Add product</a>
+  <a href="categories.html" class="">Categories</a>
+  <a href="collections.html" class="">Collections</a>
+  <a href="banners.html" class="">Banners</a>
+  <div class="grp">Selling</div>
+  <a href="orders.html" class="">Orders</a>
+  <a href="customers.html" class="">Customers</a>
+  <a href="discounts.html" class="is-active">Discounts</a>
+  <a href="reviews.html" class="">Reviews</a>
+  <a href="shipping.html" class="">Shipping</a>
+  <div class="grp">Content</div>
+  <a href="cms.html" class="">CMS pages</a>
+  <a href="settings.html" class="">Settings</a>
+  <div class="grp">Store</div>
+  <a href="../index.html">View storefront</a>
+  <a href="login.html">Sign out</a>
+</aside><main class="admin-main"><div class="admin-top"><h1>Discounts</h1><a class="btn-ad" href="product-form.html">Add product</a></div>
+<div class="admin-card"><form class="form-ad" data-admin-save>
+<div><label>Code</label><input value="AYRA10"></div>
+<div><label>Type</label><select><option>Percentage</option><option>Fixed</option></select></div>
+<div><label>Value</label><input value="10"></div>
+<div><label>Applies</label><select><option>All</option><option>Category</option><option>Product</option><option>Collection</option></select></div>
+<div><label>Min order</label><input value="5000"></div>
+<div><label>End</label><input type="date" value="2026-09-30"></div>
+<div class="full"><button class="btn-ad" type="submit">Save</button></div>
+</form>
+<table class="admin-table" style="margin-top:16px"><tbody>
+<tr><td>AYRA10</td><td>10% over 5,000</td></tr>
+<tr><td>FESTIVE20</td><td>20% festive collection</td></tr>
+</tbody></table></div></main></div><script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="../js/admin.js"></script></body></html>
